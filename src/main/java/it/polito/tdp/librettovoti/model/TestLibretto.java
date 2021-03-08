@@ -1,6 +1,7 @@
 package it.polito.tdp.librettovoti.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class TestLibretto {
 	
@@ -21,12 +22,20 @@ public class TestLibretto {
     
     System.out.println(libretto.toString());
     
-    for(Voto v:libretto.voti)
+   /* for(Voto v:libretto.voti)
     	if(v.getVoto()==25) {
     		System.out.println(v.getNome()+"\n");
     		controllo=true;
     		}
     if(controllo==false)
     	System.out.println("Nessun Corso" +"\n");
+	}*/
+    
+    List<Voto> venticinque=libretto.listaVotiUguali(25);
+    
+    Libretto librettoventicinque= libretto.votiUguali(25);
+    
+    System.out.println(librettoventicinque.toString());
+    System.out.println(venticinque.toString());
 	}
 }
